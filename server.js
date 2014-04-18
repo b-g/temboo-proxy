@@ -15,6 +15,23 @@ app.get('/', function(req, res){
   res.send('hello! temboo proxy bellow');
 });
 
+app.get('/db/:action', function(req, res){
+  // GET /db/count
+  // GET /db/reset
+  var action = req.params.action;
+  if (action === "count") {
+    cache.count(function(err, count){
+      res.send("cache count: "+count);
+    });
+  } else if (action === "reset") {
+    cache.reset(function(err, count){
+      res.send("cache is empty");
+    });
+  } else {
+    res.send(400, 'bad request');
+  };
+});
+
 app.get('/:choreo', function(req, res){
   // GET /choreoname?q=query
   var choreo = req.params.choreo;
