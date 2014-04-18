@@ -3,7 +3,6 @@ var config = require('./config')
   , tsession = require("temboo/core/temboosession")
   , session = new tsession.TembooSession(config.temboo.user_name, config.temboo.app_name, config.temboo.app_key);
 
-
 var tembooChoreos = {
   // GET /twittersearch?q=Israel
   // GET /twittersearch?q=@bndktgrs+#stuttgart

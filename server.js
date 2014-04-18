@@ -11,14 +11,18 @@ app.use(function(err, req, res, next) {
   if (err) return internalError(res, err);
 });
 
-app.get(/^\/(\w+)/, function(req, res){
-  // GET /choreoName?q=query
-  var choreoName = req.params[0];
-  if (!tembooChoreos[choreoName] || typeof req.query.q === 'undefined' || req.query.q === '') {
+app.get('/', function(req, res){
+  res.send('hello! temboo proxy bellow');
+});
+
+app.get('/:choreo', function(req, res){
+  // GET /choreoname?q=query
+  var choreo = req.params.choreo;
+  if (!tembooChoreos[choreo] || typeof req.query.q === 'undefined' || req.query.q === '') {
     res.send(400, 'bad request');
     return;
   }
-  find(req.originalUrl, req.query.q, res, tembooChoreos[choreoName]);
+  find(req.originalUrl, req.query.q, res, tembooChoreos[choreo]);
 });
 
 var find = function(cacheKey, query, res, choreo) {
