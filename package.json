@@ -2,7 +2,7 @@
   "name": "temboo-proxy",
   "author": "Benedikt Groß <bg@benedikt-gross.de>",
   "description": "a simple proxy helper to call and cache temboo choreos locally",
-  "version": "1.0",
+  "version": "1.0.0",
   "dependencies": {
     "underscore": "1.6.x",
     "express": "3.x",
@@ -11,6 +11,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/"
-  },
+    "url": "https://github.com/b-g/temboo-proxy"
+  }
 }
