@@ -10,7 +10,6 @@ config.temboo.app_name = 'APP_NAME';
 config.temboo.app_key =  'APP_KEY';
 
 config.db.filename = './db/cache';
-config.db.autoload = true;
 config.port = process.env.PORT || 3000;
 
 module.exports = config;
