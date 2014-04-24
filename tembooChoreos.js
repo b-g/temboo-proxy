@@ -18,7 +18,7 @@ var tembooChoreos = {
           cache.set(cacheKey, results.get_Response());
           cb(null, results.get_Response());
         },
-        function(error){ cb(error.message); }
+        function(error){ cb("Error twittersearch(): "+error.message); }
     );
   },
 
@@ -35,7 +35,7 @@ var tembooChoreos = {
           cache.set(cacheKey, results.get_Response());
           cb(null, results.get_Response());
         },
-        function(error){ cb(error.message); }
+        function(error){ cb("Error twittertimeline(): "+error.message); }
     );
   },
 
@@ -53,7 +53,7 @@ var tembooChoreos = {
           cache.set(cacheKey, results.get_Response());
           cb(null, results.get_Response());
         },
-        function(error){ cb(error.message); }
+        function(error){ cb("Error nytimesarticlesearch(): "+error.message); }
     );
   }
 };
