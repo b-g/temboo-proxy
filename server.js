@@ -1,5 +1,6 @@
 var config = require('./config')
   , express = require('express')
+  , _ = require('underscore')
   , app = express()
   , cache = require('./lib/cache')
   , tembooChoreos = require('./tembooChoreos')
@@ -35,10 +36,14 @@ app.get('/db/:action', function(req, res){
 app.get('/:choreo', function(req, res){
   // GET /choreoname?q=query
   var choreo = req.params.choreo;
-  if (!tembooChoreos[choreo] || typeof req.query.q === 'undefined' || req.query.q === '') {
-    res.send(400, 'bad request');
+  if (!tembooChoreos[choreo]) {
+    res.send(400, 'bad request: no temboo choreo defined with the name of "'+choreo+'"');
     return;
-  }
+  };
+  if (_.isEmpty(req.query)) {
+    res.send(400, 'bad request: empty query');
+    return;
+  };
   find(req.originalUrl, req.query, res, tembooChoreos[choreo]);
 });
 
