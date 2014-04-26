@@ -49,8 +49,8 @@ Now you can call your choreos locally:
 NB. Every new call is cached exaclty *once* in the database ...
 
 
-Predefined Choreos
-------------------
+Example Choreo Calls
+--------------------
 
 [http://localhost:3000/twittersearch?q=Israel](http://localhost:3000/twittersearch?q=Israel)
 [http://localhost:3000/twittersearch?q=@bndktgrs+#stuttgart](http://localhost:3000/twittersearch?q=@bndktgrs+#stuttgart)
