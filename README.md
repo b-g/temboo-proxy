@@ -56,8 +56,8 @@ Example Choreo Calls
 [http://localhost:3000/twittersearch?q=@bndktgrs+#stuttgart](http://localhost:3000/twittersearch?q=@bndktgrs+#stuttgart)
 [http://localhost:3000/twittertimeline?q=Koby_Barhad](http://localhost:3000/twittertimeline?q=Koby_Barhad)
 
-[http://localhost:3000/flickrsearchphotos?q=ruin](http://localhost:3000/flickrsearchphotos?q=ruin)
 [http://localhost:3000/flickrsearchphotos?lat=31.5&lon=34.75](http://localhost:3000/flickrsearchphotos?lat=31.5&lon=34.75)
+[http://localhost:3000/flickrsearchphotos?q=ruin](http://localhost:3000/flickrsearchphotos?q=ruin)
 [http://localhost:3000/flickrsearchphotos?lat=31.5&lon=34.75&q=field](http://localhost:3000/flickrsearchphotos?lat=31.5&lon=34.75&q=field)
 
 [http://localhost:3000/nytimesarticlesearch?q=Design](http://localhost:3000/nytimesarticlesearch?q=Design)
