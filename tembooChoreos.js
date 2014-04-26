@@ -4,6 +4,7 @@ var config = require('./config')
   , session = new tsession.TembooSession(config.temboo.user_name, config.temboo.app_name, config.temboo.app_key);
 
 var tembooChoreos = {
+
   // GET /twittersearch?q=Israel
   // GET /twittersearch?q=@bndktgrs+#stuttgart
   twittersearch: function(query, cacheKey, cb) {
@@ -39,6 +40,27 @@ var tembooChoreos = {
     );
   },
 
+  // GET /flickrsearchphotos?q=ruin
+  // GET /flickrsearchphotos?lat=31.5&lon=34.75
+  // GET /flickrsearchphotos?lat=31.5&lon=34.75&q=field
+  flickrsearchphotos: function(query, cacheKey, cb) {
+    var Flickr = require("temboo/Library/Flickr/Photos");
+    var searchPhotosChoreo = new Flickr.SearchPhotos(session);
+    var searchPhotosInputs = searchPhotosChoreo.newInputSet();
+    searchPhotosInputs.set_APIKey("ba8de4b58189d806bfd3179f57cda906");
+    if (query.q) searchPhotosInputs.set_Text(query.q);
+    if (query.lat) searchPhotosInputs.set_Latitude(query.lat);
+    if (query.lon) searchPhotosInputs.set_Longitude(query.lon);
+    searchPhotosChoreo.execute(
+        searchPhotosInputs,
+        function(results){
+          cache.set(cacheKey, results.get_Response());
+          cb(null, results.get_Response());
+        },
+        function(error){ cb("Error flickrsearchphotos(): "+error.message); }
+    );
+  },
+
   // GET /nytimesarticlesearch?q=Design
   nytimesarticlesearch: function(query, cacheKey, cb) {
     var NYTimes = require("temboo/Library/NYTimes/ArticleSearch");
@@ -56,6 +78,7 @@ var tembooChoreos = {
         function(error){ cb("Error nytimesarticlesearch(): "+error.message); }
     );
   }
+  
 };
 
 module.exports = tembooChoreos;
