@@ -11,7 +11,7 @@ var tembooChoreos = {
     var tweetsChoreo = new Twitter.Tweets(session);
     var tweetsInputs = tweetsChoreo.newInputSet();
     tweetsInputs.setCredential("TwitterTembooChoreo");
-    tweetsInputs.set_Query(query);
+    tweetsInputs.set_Query(query.q);
     tweetsChoreo.execute(
         tweetsInputs,
         function(results){
@@ -28,7 +28,7 @@ var tembooChoreos = {
     var userTimelineChoreo = new Twitter.UserTimeline(session);
     var userTimelineInputs = userTimelineChoreo.newInputSet();
     userTimelineInputs.setCredential("TwitterTembooChoreo");
-    userTimelineInputs.set_ScreenName(query);
+    userTimelineInputs.set_ScreenName(query.q);
     userTimelineChoreo.execute(
         userTimelineInputs,
         function(results){
@@ -45,7 +45,7 @@ var tembooChoreos = {
     var queryArticlesChoreo = new NYTimes.QueryArticles(session);
     var queryArticlesInputs = queryArticlesChoreo.newInputSet();
     queryArticlesInputs.setCredential("NYTimesArticleSearch");
-    queryArticlesInputs.set_Query(query);
+    queryArticlesInputs.set_Query(query.q);
 
     queryArticlesChoreo.execute(
         queryArticlesInputs,

@@ -39,7 +39,7 @@ app.get('/:choreo', function(req, res){
     res.send(400, 'bad request');
     return;
   }
-  find(req.originalUrl, req.query.q, res, tembooChoreos[choreo]);
+  find(req.originalUrl, req.query, res, tembooChoreos[choreo]);
 });
 
 var find = function(cacheKey, query, res, choreo) {
