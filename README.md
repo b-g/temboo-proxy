@@ -52,9 +52,11 @@ NB. Every new call is cached exaclty *once* in the database ...
 Example Choreo Calls
 --------------------
 
+note: #stuttgart becomes %23stuttgart http://meyerweb.com/eric/tools/dencoder/
+
 Twitter
 - [http://localhost:3000/twittersearch?q=Israel](http://localhost:3000/twittersearch?q=Israel)
-- [http://localhost:3000/twittersearch?q=@bndktgrs+#stuttgart](http://localhost:3000/twittersearch?q=@bndktgrs+#stuttgart)
+- [http://localhost:3000/twittersearch?q=@bndktgrs+%23stuttgart](http://localhost:3000/twittersearch?q=@bndktgrs+%23stuttgart)
 - [http://localhost:3000/twittertimeline?q=Koby_Barhad](http://localhost:3000/twittertimeline?q=Koby_Barhad)
 
 Flickr

@@ -6,7 +6,7 @@ var config = require('./config')
 var tembooChoreos = {
 
   // GET /twittersearch?q=Israel
-  // GET /twittersearch?q=@bndktgrs+#stuttgart
+  // GET /twittersearch?q=@bndktgrs+%23stuttgart
   twittersearch: function(query, cacheKey, cb) {
     var Twitter = require("temboo/Library/Twitter/Search");
     var tweetsChoreo = new Twitter.Tweets(session);
